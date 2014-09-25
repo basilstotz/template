@@ -1,5 +1,7 @@
 #!/bin/sh
 
+apt-get install --yes build-essential debhelper dh-make quilt fakeroot lintian
+
 export EMAIL="stotz@amxa.ch"
 export DEBFULLNAME="Basil Stotz"
 
@@ -17,4 +19,5 @@ cp debian/control essentials
 
 mv debian debian.ori
 mv essentials debian
-
+cd debian
+sed -i  's/1.0-1/1.0/'  changelog
